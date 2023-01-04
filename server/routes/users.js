@@ -3,7 +3,7 @@ import {
     getUser,
     getUserFriends,
     addRemoveFriend,
- } from "../controllers/user.js";
+ } from "../controllers/users.js";
  import  { verifyToken } from "../middleware/auth.js";
 
 const router = express.Router();
@@ -13,5 +13,7 @@ const router = express.Router();
 router.get("/:id", verifyToken, getUser);
 router.get("/:id/friends", verifyToken, getUser);
 
-/* UDDATE */
+/* UPDATE */
 router.patch("/:id/:friendId", verifyToken, getUser);
+
+export default router;
